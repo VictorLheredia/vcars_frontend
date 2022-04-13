@@ -1,7 +1,9 @@
+import CarBox from "../modules/CarBox";
+
 export default function StockPage() {
   return (
     <div>
-      <p>Novo componente!</p>
+      <CarBox></CarBox>
     </div>
   );
 }

@@ -1,0 +1,122 @@
+.link {
+    text-decoration: none;
+}
+
+.card {
+    width: 260px;
+    height: 360px;
+    border: solid 1px #dcdcdc;
+    border-top: 3px solid #4faac5;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    color: black;
+    text-transform: uppercase;
+}
+
+.card img {
+    width: 100%;
+    height: 190px;
+}
+
+.buttonOferta {
+    position: absolute;
+    top: 175px;
+    background: #f2c811;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    max-width: 50%;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 2px;
+    height: 30px;
+    line-height: 30px;
+}
+
+
+.priceBox {
+    text-align: center;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    min-height: 160px;
+    text-decoration: none;
+}
+
+.priceBox .title {  
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.priceBox .subtitle {
+    font-size: 0.7em;
+
+}
+
+.priceBox .priceCar {
+    color: #4faac5;
+}
+
+.priceBox .cifrao {
+    font-size: 16px;
+    font-weight: 700;
+    padding-right: 5px;
+}
+
+.priceBox .price {
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.specsBox {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.specsBox li {
+    border: 1px solid #dcdcdc;
+    border-bottom: none;
+    color: #999;
+    font-size: 12px;
+    padding: 5px 2px;
+    flex: 1;
+    text-align: center;
+}
+
+.specsBox li span {
+    line-height: 20px;
+}
+
+.specsBox .icon {
+    color: black;
+    padding-right: 5px;
+    font-size: 1.2em;
+}
+
+.card:hover {
+    background-color: #4faac5;
+}
+
+.card:hover .priceCar{
+    color: white
+}
+
+.card:hover .priceBox{
+    color: white;
+}
+
+.card:hover .icon {
+    color: white;
+}
+
+.card:hover .specsBox li {
+    color: white;
+}
