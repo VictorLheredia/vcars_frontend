@@ -6,7 +6,7 @@ export default function ButtonDelete({ carId, text, keyArray }) {
 
   function deleteCar() {
     keys.map((key) =>
-      fetch(`http://localhost:4000/imagens/${carId}/${key}`, {
+      fetch(`http://localhost:4000/images/${carId}/${key}`, {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
       })

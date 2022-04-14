@@ -9,12 +9,12 @@ export default function CarEdit() {
   const [car, setCar] = useState([]);
   const { carId } = useParams();
 
-  const images = car.imagens;
+  const images = car.images;
   const urlArray = (images || []).map((image) => image.url);
   const keyArray = (images || []).map((image) => image.key);
 
-  const marcaObject = car.marca;
-  const marca = (marcaObject || {}).nome;
+  const brandObject = car.brand;
+  const brand = (brandObject || {}).name;
 
   useEffect(() => {
     fetch(`http://localhost:4000/cars/${carId}`, {
@@ -29,11 +29,11 @@ export default function CarEdit() {
   return (
     <div>
       <div>
-        <h1>{car.modelo}</h1>
+        <h1>{car.model}</h1>
         <p>{car._id}</p>
-        <p>{marca}</p>
-        <p>{car.ano}</p>
-        <p>{car.preco}</p>
+        <p>{brand}</p>
+        <p>{car.year}</p>
+        <p>{car.price}</p>
       </div>
       <div>
         {urlArray.map((url) => (

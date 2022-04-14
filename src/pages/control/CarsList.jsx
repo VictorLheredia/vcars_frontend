@@ -36,17 +36,17 @@ export default function CarsList() {
           {cars.map((car) => (
             <tr className="trBody" key={car._id} onClick={() => Navigate(`/painel/editar/${car._id}`)}>
               <td>{car._id}</td>
-              <td>{car.modelo}</td>
-              <td>{car.marca.nome}</td>
-              <td>{car.ano}</td>
-              <td>{car.preco}</td>
+              <td>{car.model}</td>
+              <td>{car.brand.name}</td>
+              <td>{car.year}</td>
+              <td>{car.price}</td>
               <td>
                 <ButtonDelete
                   carId={car._id}
                   text={<BsTrash />}
                   keyArray={
-                    Array.isArray(car.imagens)
-                      ? car.imagens.map((img) => img.key)
+                    Array.isArray(car.images)
+                      ? car.images.map((img) => img.key)
                       : []
                   }
                 ></ButtonDelete>

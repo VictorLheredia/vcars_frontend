@@ -22,13 +22,13 @@ export default function BoxVeiculos() {
           <CardCar
             key={veiculo._id}
             veiculo_id={veiculo._id}
-            modelo={veiculo.modelo}
-            marca={veiculo.marca.nome}
-            ano={veiculo.ano}
-            preco={veiculo.preco}
-            imagem={
-              Array.isArray(veiculo.imagens)
-                ? veiculo.imagens.map((img) => img.url).shift()
+            model={veiculo.model}
+            brand={veiculo.brand.name}
+            year={veiculo.year}
+            price={veiculo.price}
+            image={
+              Array.isArray(veiculo.images)
+                ? veiculo.images.map((img) => img.url).shift()
                 : []
             }
           />

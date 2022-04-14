@@ -8,24 +8,24 @@ import { MdLocalGasStation } from "react-icons/md";
 import { Card } from "react-bootstrap";
 
 export default function CardCar({
-  modelo,
-  marca,
-  ano,
-  preco,
-  imagem,
+  model,
+  brand,
+  year,
+  price,
+  image,
   veiculo_id,
 }) {
-  const BRL = preco.toLocaleString("pt-br", { minimumFractionDigits: 2 });
+  const BRL = price.toLocaleString("pt-br", { minimumFractionDigits: 2 });
 
   return (
     <div>
       <Link to={`/estoque/${veiculo_id}`} className="link">
         <Card className="card">
-          <img src={imagem} alt="imagem do veículo" />
+          <img src={image} alt="imagem do veículo" />
           <div className="buttonOferta">Ver oferta</div>
           <div className="priceBox">
             <div className="title">
-              {marca} {modelo}
+              {brand} {model}
             </div>
             <div className="subtitle">
               1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO

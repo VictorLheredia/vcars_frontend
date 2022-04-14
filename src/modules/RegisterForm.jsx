@@ -5,7 +5,7 @@ import Select from "../components/Select";
 import SubmitButton from "../components/SubmitButton";
 
 export default function RegisterForm({ handleSubmit, btnText, veiculoData }) {
-  const [marcas, setMarcas] = useState([]);
+  const [brands, setBrands] = useState([]);
   const [veiculo, SetVeiculo] = useState(veiculoData || {});
 
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function RegisterForm({ handleSubmit, btnText, veiculoData }) {
       headers: { "Content-Type": "application/json" },
     })
       .then((resp) => resp.json())
-      .then((data) => setMarcas(data))
+      .then((data) => setBrands(data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -30,9 +30,9 @@ export default function RegisterForm({ handleSubmit, btnText, veiculoData }) {
   function handleSelect(e) {
     SetVeiculo({
       ...veiculo,
-      marca: {
+      brand: {
         id: e.target.value,
-        nome: e.target.options[e.target.selectedIndex].text,
+        name: e.target.options[e.target.selectedIndex].text,
       },
     });
   }
@@ -40,28 +40,28 @@ export default function RegisterForm({ handleSubmit, btnText, veiculoData }) {
   return (
     <form onSubmit={submit}>
       <Input
-        name="modelo"
+        name="model"
         type="text"
-        text="Modelo"
+        text="model"
         placeholder="Insira o modelo do veículo"
         handleOnChange={handleChange}
-        value={veiculo.modelo ? veiculo.modelo : ""}
+        value={veiculo.model ? veiculo.model : ""}
       ></Input>
       <Select
-        name="marca"
+        name="brand"
         text="Marca"
         placeholder="Selecione a marca do veículo"
-        options={marcas}
+        options={brands}
         handleOnChange={handleSelect}
-        value={veiculo.marca ? veiculo.marca.id : ""}
+        value={veiculo.brand ? veiculo.brand.id : ""}
       ></Select>
       <Input
-        name="preco"
+        name="price"
         type="number"
         text="preço do veículo"
         placeholder="Insira o preço do veículo"
         handleOnChange={handleChange}
-        value={veiculo.preco ? veiculo.preco : ""}
+        value={veiculo.price ? veiculo.price : ""}
       ></Input>
       <SubmitButton text={btnText}></SubmitButton>
     </form>
