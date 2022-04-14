@@ -7,19 +7,12 @@ import { MdLocalGasStation } from "react-icons/md";
 
 import { Card } from "react-bootstrap";
 
-export default function CardCar({
-  model,
-  brand,
-  year,
-  price,
-  image,
-  veiculo_id,
-}) {
+export default function CardCar({ model, brand, year, price, image, carId }) {
   const BRL = price.toLocaleString("pt-br", { minimumFractionDigits: 2 });
 
   return (
     <div>
-      <Link to={`/estoque/${veiculo_id}`} className="link">
+      <Link to={`/estoque/${carId}`} className="link">
         <Card className="card">
           <img src={image} alt="imagem do veículo" />
           <div className="buttonOferta">Ver oferta</div>

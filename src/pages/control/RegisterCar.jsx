@@ -4,11 +4,11 @@ import RegisterForm from "../../modules/RegisterForm";
 export default function RegisterCar() {
   const Navigate = useNavigate();
 
-  function createPost(veiculo) {
+  function createPost(car) {
     fetch(`http://localhost:4000/cars`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(veiculo),
+      body: JSON.stringify(car),
     }).then((resp) => {
       Navigate("/painel");
     });
