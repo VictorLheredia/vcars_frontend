@@ -5,7 +5,7 @@ export default function RegisterCar() {
   const Navigate = useNavigate();
 
   function createPost(veiculo) {
-    fetch(`http://localhost:4000/veiculos`, {
+    fetch(`http://localhost:4000/cars`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(veiculo),

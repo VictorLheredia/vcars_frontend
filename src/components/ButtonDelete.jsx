@@ -12,11 +12,11 @@ export default function ButtonDelete({ carId, text, keyArray }) {
       })
     );
 
-    fetch(`http://localhost:4000/veiculos/${carId}`, {
+    fetch(`http://localhost:4000/cars/${carId}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     }).then((resp) => {
-      navigate("/painel/lista");
+      navigate("/painel");
     });
   }
 

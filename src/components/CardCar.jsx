@@ -7,7 +7,7 @@ import { MdLocalGasStation } from "react-icons/md";
 
 import { Card } from "react-bootstrap";
 
-export default function VeiculoCard({
+export default function CardCar({
   modelo,
   marca,
   ano,

@@ -9,7 +9,7 @@ export default function RegisterForm({ handleSubmit, btnText, veiculoData }) {
   const [veiculo, SetVeiculo] = useState(veiculoData || {});
 
   useEffect(() => {
-    fetch("http://localhost:4000/marcas", {
+    fetch("http://localhost:4000/brands", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

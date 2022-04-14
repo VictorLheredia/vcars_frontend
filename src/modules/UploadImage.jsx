@@ -13,7 +13,7 @@ export default function UploadImage() {
 
     await api({
       method: "post",
-      url: `/imagens/${carId}`,
+      url: `/images/${carId}`,
       headers: { "Content-Type": "application/json" },
       data: formData,
     }).then((resp) => console.log(resp));

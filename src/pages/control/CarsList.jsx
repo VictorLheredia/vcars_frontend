@@ -10,7 +10,7 @@ export default function CarsList() {
   const Navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:4000/veiculos", {
+    fetch("http://localhost:4000/cars", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

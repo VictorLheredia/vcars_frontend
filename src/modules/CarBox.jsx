@@ -6,7 +6,7 @@ export default function BoxVeiculos() {
   const [veiculos, setVeiculos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/veiculos", {
+    fetch("http://localhost:4000/cars", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })

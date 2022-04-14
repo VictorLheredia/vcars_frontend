@@ -17,7 +17,7 @@ export default function CarEdit() {
   const marca = (marcaObject || {}).nome;
 
   useEffect(() => {
-    fetch(`http://localhost:4000/veiculos/${carId}`, {
+    fetch(`http://localhost:4000/cars/${carId}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     })
