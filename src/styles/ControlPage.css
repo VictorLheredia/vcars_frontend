@@ -1,0 +1,10 @@
+.controlPage {
+    display: flex;
+    padding-top: 50px;
+    min-height: calc(100vh - 100px)
+}
+
+.outlet {
+    padding-left: 20px;
+    width: 100%;
+}

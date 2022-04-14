@@ -6,8 +6,10 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import StockPage from "./pages/StockPage";
 import LoginPage from "./pages/LoginPage";
+import ControlPage from "./pages/control/ControlPage";
 import CarsList from "./pages/control/CarsList";
 import CarEdit from "./pages/control/CarEdit";
+import RegisterCar from "./pages/control/RegisterCar";
 
 export default function AppRoutes() {
   return (
@@ -18,8 +20,11 @@ export default function AppRoutes() {
             <Route index element={<HomePage />} />
             <Route path="/estoque" element={<StockPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/painel/lista" element={<CarsList />} />
-            <Route path="/painel/editar/:carId" element={<CarEdit />} />
+            <Route path="/painel" element={<ControlPage />}>
+              <Route index element={<CarsList />} />
+              <Route path="editar/:carId" element={<CarEdit />} />
+              <Route path="cadastro" element={<RegisterCar />} />
+            </Route>
           </Route>
         </Routes>
       </AuthProvider>
