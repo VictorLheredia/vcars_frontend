@@ -5,7 +5,7 @@ import Figure from "react-bootstrap/Figure";
 import UploadImage from "../../modules/UploadImage";
 import ButtonDelete from "../../components/ButtonDelete";
 
-export default function CarEdit() {
+export default function EditCar() {
   const [car, setCar] = useState([]);
   const { carId } = useParams();
 
