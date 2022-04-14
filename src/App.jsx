@@ -1,16 +1,15 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import { Outlet } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
-import AppRoutes from "./AppRoutes";
+import Header from "./layouts/Header";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
+    <>
+      <Header></Header>
       <Container>
-        <AppRoutes></AppRoutes>
+        <Outlet></Outlet>
       </Container>
-    </div>
+    </>
   );
 }
-
-export default App;
