@@ -6,6 +6,7 @@ import App from "./App";
 import HomePage from "./pages/HomePage";
 import StockPage from "./pages/StockPage";
 import LoginPage from "./pages/LoginPage";
+
 import ControlPage from "./pages/control/ControlPage";
 import ListCar from "./pages/control/ListCar";
 import EditCar from "./pages/control/EditCar";
@@ -20,7 +21,7 @@ export default function AppRoutes() {
             <Route index element={<HomePage />} />
             <Route path="/estoque" element={<StockPage />} />
             <Route path="/login" element={<LoginPage />} />
-            <Route path="/painel" element={<ControlPage />}>
+            <Route path="/painel" element={<Private><ControlPage /></Private>}>
               <Route index element={<ListCar />} />
               <Route path="editar/:carId" element={<EditCar />} />
               <Route path="cadastro" element={<RegisterCar />} />

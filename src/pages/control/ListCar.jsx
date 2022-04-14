@@ -1,8 +1,8 @@
+import "../../styles/ListCar.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
 import Table from "react-bootstrap/Table";
-import "../../styles/ListCar.css";
 import ButtonDelete from "../../components/ButtonDelete";
 
 export default function ListCar() {

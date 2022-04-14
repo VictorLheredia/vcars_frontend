@@ -1,10 +1,8 @@
 import "../styles/CardCar.css";
-
 import { Link } from "react-router-dom";
 import { BsCalendar3 } from "react-icons/bs";
 import { SiSpeedtest } from "react-icons/si";
 import { MdLocalGasStation } from "react-icons/md";
-
 import { Card } from "react-bootstrap";
 
 export default function CardCar({ model, brand, year, price, image, carId }) {

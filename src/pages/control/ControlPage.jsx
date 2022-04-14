@@ -5,7 +5,7 @@ import ControlNav from "../../components/ControlNav";
 export default function ControlPage() {
   return (
     <div className="controlPage">
-      <div className="controNav">
+      <div className="controlNav">
         <ControlNav></ControlNav>
       </div>
       <div className="outlet">
