@@ -6,6 +6,7 @@ import HomePage from "./pages/HomePage.jsx";
 import StockPage from "./pages/StockPage"
 import LoginPage from "./pages/LoginPage";
 import CarsList from "./pages/control/CarsList";
+import CarEdit from "./pages/control/CarEdit"
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ export default function AppRoutes() {
           <Route path="/estoque" element={<StockPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/painel/lista" element={<CarsList />} />
+          <Route path="/painel/editar/:carId" element={<CarEdit />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

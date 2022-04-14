@@ -34,10 +34,7 @@ export default function CarsList() {
         </thead>
         <tbody>
           {cars.map((car) => (
-            <tr className="trBody"
-              key={car._id}
-              onClick={() => Navigate(`/painel/editar/${car._id}`)}
-            >
+            <tr className="trBody" key={car._id} onClick={() => Navigate(`/painel/editar/${car._id}`)}>
               <td>{car._id}</td>
               <td>{car.modelo}</td>
               <td>{car.marca.nome}</td>
@@ -56,7 +53,6 @@ export default function CarsList() {
               </td>
             </tr>
           ))}
-          ;
         </tbody>
       </Table>
     </div>

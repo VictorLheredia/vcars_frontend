@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import CardCar from "../components/CardCar";
 
 export default function BoxVeiculos() {
