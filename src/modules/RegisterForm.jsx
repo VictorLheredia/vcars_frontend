@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { api } from "../services/api";
 
 import Input from "../components/Input";
 import Select from "../components/Select";
@@ -9,12 +10,9 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
   const [car, setCar] = useState(carData || {});
 
   useEffect(() => {
-    fetch("http://localhost:4000/brands", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((resp) => resp.json())
-      .then((data) => setBrands(data))
+    api
+      .get(`/brands`)
+      .then((res) => setBrands(res.data))
       .catch((err) => console.log(err));
   }, []);
 

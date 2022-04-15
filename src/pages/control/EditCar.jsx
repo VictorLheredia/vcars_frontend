@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { api } from "../../services/api";
 import Figure from "react-bootstrap/Figure";
-
 import UploadImage from "../../modules/UploadImage";
 import ButtonDelete from "../../components/ButtonDelete";
 
@@ -17,12 +17,9 @@ export default function EditCar() {
   const brand = (brandObject || {}).name;
 
   useEffect(() => {
-    fetch(`http://localhost:4000/cars/${carId}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((resp) => resp.json())
-      .then((data) => setCar(data))
+    api
+      .get(`/cars/${carId}`)
+      .then((resp) => setCar(resp.data))
       .catch((err) => console.log(err));
   }, [carId]);
 

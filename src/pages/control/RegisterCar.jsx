@@ -1,17 +1,16 @@
 import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 import RegisterForm from "../../modules/RegisterForm";
 
 export default function RegisterCar() {
   const Navigate = useNavigate();
 
   function createPost(car) {
-    fetch(`http://localhost:4000/cars`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(car),
-    }).then((resp) => {
-      Navigate("/painel");
-    });
+    api({
+      method: "post",
+      url: `/cars`,
+      data: JSON.stringify(car),
+    }).then(Navigate(`/painel`));
   }
 
   return (
