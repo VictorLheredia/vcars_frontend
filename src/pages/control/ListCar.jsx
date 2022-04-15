@@ -2,6 +2,7 @@ import "../../styles/ListCar.css";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsTrash } from "react-icons/bs";
+import { api } from "../../services/api";
 import Table from "react-bootstrap/Table";
 import ButtonDelete from "../../components/ButtonDelete";
 
@@ -10,12 +11,9 @@ export default function ListCar() {
   const Navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:4000/cars", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((resp) => resp.json())
-      .then((data) => setCars(data))
+    api
+      .get(`/cars`)
+      .then((res) => setCars(res.data))
       .catch((err) => console.log(err));
   }, []);
 
@@ -34,7 +32,11 @@ export default function ListCar() {
         </thead>
         <tbody>
           {cars.map((car) => (
-            <tr className="trBody" key={car._id} onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+            <tr
+              className="trBody"
+              key={car._id}
+              onClick={() => Navigate(`/painel/editar/${car._id}`)}
+            >
               <td>{car._id}</td>
               <td>{car.model}</td>
               <td>{car.brand.name}</td>

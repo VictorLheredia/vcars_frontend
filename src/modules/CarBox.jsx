@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { Row } from "react-bootstrap";
+import { api } from "../services/api";
 import CardCar from "../components/CardCar";
 
 export default function CarBox() {
   const [cars, setCars] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:4000/cars", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    })
-      .then((resp) => resp.json())
-      .then((data) => setCars(data))
+    api
+      .get(`/cars`)
+      .then((res) => setCars(res.data))
       .catch((err) => console.log(err));
   }, []);
 
