@@ -1,7 +1,11 @@
-export default function Carousel() {
+import "react-image-gallery/styles/css/image-gallery.css";
+import ImageGallery from "react-image-gallery";
+
+export default function Carousel(carouselObject) {
+  
+  const images = carouselObject.urlArray;
+
   return (
-    <div>
-      <p>Carousel</p>
-    </div>
+    <ImageGallery showPlayButton={false} showBullets={true} items={images} />
   );
 }
