@@ -1,3 +1,5 @@
+import "../styles/CarPage.css";
+
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../services/api";
@@ -11,6 +13,7 @@ export default function CarPage() {
   const [car, setCar] = useState([]);
   const { carId } = useParams();
 
+  const brand = (car.brand || {}).name;
   const images = car.images;
   const urlArray = (images || []).map((image) => image.url);
   const carouselObject = urlArray.map((url) => ({
@@ -29,7 +32,9 @@ export default function CarPage() {
     <div>
       <Row>
         <Col md={9}>
-          TITULO
+          <div id="carTitle">
+            <span>{brand} Modelo</span> 1.0 TI-VCT FLEX SE SEDAN MANUAL
+          </div>
           <Row>
             <Col md={8}>
               <Carousel urlArray={carouselObject} />

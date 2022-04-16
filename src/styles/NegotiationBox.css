@@ -1,0 +1,96 @@
+.NegotiationBox {
+    background-color: #005284;
+    height: 100%;
+    text-align: center;
+}
+
+#price {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 24px;
+}
+
+.negotiation {
+    border-top: solid 1px #fff;
+    background: #005284;
+    text-align: center;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.negotiation span{ 
+    display: inline-block;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #fff;
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+form input {
+    border: none;
+    border-radius: 0;
+    margin-bottom: 12px;
+}
+
+.input { 
+    display: block;
+    width: 100%;
+    height: 38px;
+    padding: 6px 12px;
+    font-size: 14px;
+}
+
+.note {
+    height: 200px;
+}
+
+.contact-by {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.box-radio {
+    display: flex;
+    justify-content: center;
+}
+
+.radio {
+    padding: 10px;
+}
+
+.box-radio label {
+    font-size: 12px;
+    font-weight: 400;
+    color: #fff;
+    padding-left: 10px;
+}
+
+.box-radio input {
+    cursor: pointer;
+}
+
+.negotiation-button button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    background: #f2c811;
+    color: black;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 16px;
+    transition: all 0.3s;
+    border-radius: 1px;
+}
+
+.negotiation-button button:hover {
+    background-color: #C5A20B;
+}

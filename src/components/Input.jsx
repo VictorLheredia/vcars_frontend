@@ -10,8 +10,8 @@ export default function Input({
       <div>
         <label htmlFor={name}>{text}</label>
         <input
-          type={type}
           name={name}
+          type={type}
           id={name}
           placeholder={placeholder}
           onChange={handleOnChange}

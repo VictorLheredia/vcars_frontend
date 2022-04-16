@@ -1,0 +1,12 @@
+#carTitle {
+    color: #005284;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 300;
+    display: inline-block;
+}
+
+#carTitle span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
