@@ -1,18 +1,22 @@
 import { Container, Row, Col } from "react-bootstrap";
-import CarBox from "../modules/CarBox";
+import BrandFilter from "../components/BrandFilter";
 import SearchBar from "../modules/SearchBar";
+import CarBox from "../modules/CarBox";
 
 export default function StockPage() {
   return (
-    <Container>
-      <Row>
-        <Col md={3}>
-          <SearchBar></SearchBar>
-        </Col>
-        <Col md={9}>
-          <CarBox></CarBox>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <BrandFilter></BrandFilter>
+      <Container id="md">
+        <Row>
+          <Col md={3}>
+            <SearchBar></SearchBar>
+          </Col>
+          <Col md={9}>
+            <CarBox></CarBox>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 }

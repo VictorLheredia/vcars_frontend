@@ -1,0 +1,44 @@
+#BrandFilter {
+    border-top: solid 1px #e5e5e5;
+    border-bottom: solid 1px #e5e5e5;
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#BrandFilter .title {
+    display: block;
+    text-transform: uppercase;
+    background: #fff;
+    margin: 0 auto;
+    margin-top: -30px;
+    width: 12%;
+    font-size: 12px;
+    color: #a1a1a1;
+}
+
+#BrandFilter .brands {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#BrandFilter .brand {
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+    display: inline-block;
+    max-height: 50px;
+    padding: 10px;
+    border: solid 1px #e5e5e5;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+#BrandFilter .brand img {
+    vertical-align: middle;
+}
+
+#BrandFilter .brand:hover {
+    border: solid 1px #4FAAC5;
+    box-shadow: 0px 0px 3px #4FAAC5;
+}

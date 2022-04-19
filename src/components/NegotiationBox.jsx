@@ -1,9 +1,14 @@
 import "../styles/NegotiationBox.css";
 
-export default function NegotiationBox() {
+export default function NegotiationBox({ price }) {
+  const BRL = price?.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
+
   return (
     <div id="NegotiationBox">
-      <div className="price">R$ 53.000,00</div>
+      <div className="price">{BRL}</div>
       <div className="negotiation">
         <span>aproveite a oferta!</span>
         <form>

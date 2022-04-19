@@ -17,7 +17,7 @@ export default function CardCar({
   fuel,
   image,
 }) {
-  const BRL = price.toLocaleString("pt-br", { minimumFractionDigits: 2 });
+  const BRL = price?.toLocaleString("pt-br", { minimumFractionDigits: 2 });
 
   return (
     <div id="CardCar">

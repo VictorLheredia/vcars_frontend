@@ -16,24 +16,8 @@ export default function CarBox() {
       .catch((err) => console.log(err));
   }, []);
 
-  function BrandLink({ brand, ...props }) {
-    let [params] = useSearchParams();
-    let isActive = params.getAll("brand").includes(brand);
-    return (
-      <Link
-        style={{ color: isActive ? "red" : "" }}
-        to={`/estoque?brand=${brand}`}
-        {...props}
-      />
-    );
-  }
-
   return (
     <div>
-      <BrandLink brand="bmw">bmw</BrandLink>
-      <br></br>
-      <BrandLink brand="fiat">fiat</BrandLink>
-
       <Row md={1} lg={3}>
         {cars
           .filter((car) => {
