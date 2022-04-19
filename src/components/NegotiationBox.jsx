@@ -2,8 +2,8 @@ import "../styles/NegotiationBox.css";
 
 export default function NegotiationBox() {
   return (
-    <div className="NegotiationBox">
-      <div id="price">R$ 53.000,00</div>
+    <div id="NegotiationBox">
+      <div className="price">R$ 53.000,00</div>
       <div className="negotiation">
         <span>aproveite a oferta!</span>
         <form>

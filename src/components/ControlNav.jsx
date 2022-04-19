@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 export default function ControlNav() {
   return (
-    <div className="controlNav">
+    <div id="controlNav">
       <div>
         <NavLink to="/painel">Tabela de veículos</NavLink>
       </div>

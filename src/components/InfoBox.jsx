@@ -11,7 +11,7 @@ import { IoMdColorPalette } from "react-icons/io";
 
 export default function InfoBox() {
   return (
-    <div className="InfoBox">
+    <div id="InfoBox">
       <div className="item_info">
         <FaCar />
         <span>Moldeo</span>

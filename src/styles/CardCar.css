@@ -1,8 +1,8 @@
-.CardCar-link {
+#CardCar .link {
     text-decoration: none;
 }
 
-.CardCar-card {
+#CardCar .card {
     width: 260px;
     height: 360px;
     border: solid 1px #dcdcdc;
@@ -14,12 +14,12 @@
     text-transform: uppercase;
 }
 
-.CardCar-img {
+#CardCar img {
     width: 100%;
     height: 190px;
 }
 
-.CardCar-buttonOferta {
+#CardCar .buttonOferta {
     position: absolute;
     top: 175px;
     background: #f2c811;
@@ -35,7 +35,7 @@
     line-height: 30px;
 }
 
-.CardCar-priceBox {
+#CardCar .priceBox {
     text-align: center;
     padding-top: 20px;
     padding-left: 10px;
@@ -44,31 +44,31 @@
     text-decoration: none;
 }
 
-.CardCar-title {
+#CardCar .title {
     font-weight: bold;
     padding-bottom: 5px;
 }
 
-.CardCar-subtitle {
+#CardCar .subtitle {
     font-size: 0.7em;
 }
 
-.CardCar-priceCar {
+#CardCar .priceCar {
     color: #4faac5;
 }
 
-.CardCar-cifrao {
+#CardCar .cifrao {
     font-size: 16px;
     font-weight: 700;
     padding-right: 5px;
 }
 
-.CardCar-price {
+#CardCar .price {
     font-size: 24px;
     font-weight: 900;
 }
 
-.CardCar-specsBox {
+#CardCar .specsBox {
     display: flex;
     position: absolute;
     width: 100%;
@@ -78,7 +78,7 @@
     padding: 0;
 }
 
-.CardCar-specs {
+#CardCar .specs {
     border: 1px solid #dcdcdc;
     border-bottom: none;
     color: #999;
@@ -88,32 +88,32 @@
     text-align: center;
 }
 
-.CardCar-text {
+#CardCar .text {
     line-height: 20px;
 }
 
-.CardCar-specsBox .CardCar-icon {
+#CardCar .CardCar-icon {
     color: black;
     padding-right: 5px;
     font-size: 1.2em;
 }
 
-.CardCar-card:hover {
+#CardCar .card:hover {
     background-color: #4faac5;
 }
 
-.CardCar-card:hover .CardCar-priceCar {
+#CardCar .card:hover .priceCar {
     color: white
 }
 
-.CardCar-card:hover .CardCar-priceBox {
+#CardCar .card:hover .priceBox {
     color: white;
 }
 
-.CardCar-card:hover .CardCar-icon {
+#CardCar .card:hover .icon {
     color: white;
 }
 
-.CardCar-card:hover .CardCar-specs {
+#CardCar .card:hover .specs {
     color: white;
 }

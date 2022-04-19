@@ -1,4 +1,4 @@
-#carTitle {
+#CarPage .carTitle {
     color: #005284;
     text-transform: uppercase;
     font-size: 1rem;
@@ -6,7 +6,7 @@
     display: inline-block;
 }
 
-#carTitle span {
+#CarPage .carTitle span {
     font-size: 1.5rem;
     font-weight: bold;
 }

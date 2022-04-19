@@ -1,17 +1,17 @@
-.NegotiationBox {
+#NegotiationBox {
     background-color: #005284;
     height: 100%;
     text-align: center;
 }
 
-#price {
+#NegotiationBox .price {
     color: #fff;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 24px;
 }
 
-.negotiation {
+#NegotiationBox .negotiation {
     border-top: solid 1px #fff;
     background: #005284;
     text-align: center;
@@ -19,7 +19,7 @@
     padding-right: 15px;
 }
 
-.negotiation span{ 
+#NegotiationBox .negotiation span {
     display: inline-block;
     text-transform: uppercase;
     font-weight: 800;
@@ -30,13 +30,13 @@
     font-style: italic;
 }
 
-form input {
+#NegotiationBox .negotiation form input {
     border: none;
     border-radius: 0;
     margin-bottom: 12px;
 }
 
-.input { 
+#NegotiationBox .input {
     display: block;
     width: 100%;
     height: 38px;
@@ -44,37 +44,37 @@ form input {
     font-size: 14px;
 }
 
-.note {
+#NegotiationBox .note {
     height: 200px;
 }
 
-.contact-by {
+#NegotiationBox .contact-by {
     color: #fff;
     font-size: 14px;
     font-weight: 600;
 }
 
-.box-radio {
+#NegotiationBox .box-radio {
     display: flex;
     justify-content: center;
 }
 
-.radio {
+#NegotiationBox .radio {
     padding: 10px;
 }
 
-.box-radio label {
+#NegotiationBox .box-radio label {
     font-size: 12px;
     font-weight: 400;
     color: #fff;
     padding-left: 10px;
 }
 
-.box-radio input {
+#NegotiationBox .box-radio input {
     cursor: pointer;
 }
 
-.negotiation-button button {
+#NegotiationBox .negotiation-button button {
     margin-top: 15px;
     margin-bottom: 10px;
     background: #f2c811;
@@ -91,6 +91,6 @@ form input {
     border-radius: 1px;
 }
 
-.negotiation-button button:hover {
+#NegotiationBox .negotiation-button button:hover {
     background-color: #C5A20B;
 }

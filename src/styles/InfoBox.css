@@ -1,9 +1,9 @@
-.InfoBox {
+#InfoBox {
     border: solid 1px #d6d6d6;
     height: 100%;
 }
 
-.item_info { 
+#InfoBox .item_info {
     display: flex;
     align-items: center;
     height: 12.5%;
@@ -11,18 +11,17 @@
     padding-left: 12px;
 }
 
-.gray {
-    background-color:  #f7f7f7;
+#InfoBox .gray {
+    background-color: #f7f7f7;
 }
 
-.item_info svg {
+#InfoBox .item_info svg {
     font-size: 24px;
     color: #a1a1a1;
 }
 
-.item_info span {
-    padding-left: 10px; 
+#InfoBox .item_info span {
+    padding-left: 10px;
     padding-right: 5px;
     font-weight: bold;
 }
-

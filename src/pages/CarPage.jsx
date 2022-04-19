@@ -29,10 +29,10 @@ export default function CarPage() {
   }, [carId]);
 
   return (
-    <div>
+    <div id="CarPage">
       <Row>
         <Col md={9}>
-          <div id="carTitle">
+          <div className="carTitle">
             <span>{brand} Modelo</span> 1.0 TI-VCT FLEX SE SEDAN MANUAL
           </div>
           <Row>
