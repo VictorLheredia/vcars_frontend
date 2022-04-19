@@ -1,8 +1,8 @@
-.link {
+.CardCar-link {
     text-decoration: none;
 }
 
-.card {
+.CardCar-card {
     width: 260px;
     height: 360px;
     border: solid 1px #dcdcdc;
@@ -14,12 +14,12 @@
     text-transform: uppercase;
 }
 
-.card img {
+.CardCar-img {
     width: 100%;
     height: 190px;
 }
 
-.buttonOferta {
+.CardCar-buttonOferta {
     position: absolute;
     top: 175px;
     background: #f2c811;
@@ -35,8 +35,7 @@
     line-height: 30px;
 }
 
-
-.priceBox {
+.CardCar-priceBox {
     text-align: center;
     padding-top: 20px;
     padding-left: 10px;
@@ -45,32 +44,31 @@
     text-decoration: none;
 }
 
-.priceBox .title {  
+.CardCar-title {
     font-weight: bold;
     padding-bottom: 5px;
 }
 
-.priceBox .subtitle {
+.CardCar-subtitle {
     font-size: 0.7em;
-
 }
 
-.priceBox .priceCar {
+.CardCar-priceCar {
     color: #4faac5;
 }
 
-.priceBox .cifrao {
+.CardCar-cifrao {
     font-size: 16px;
     font-weight: 700;
     padding-right: 5px;
 }
 
-.priceBox .price {
+.CardCar-price {
     font-size: 24px;
     font-weight: 900;
 }
 
-.specsBox {
+.CardCar-specsBox {
     display: flex;
     position: absolute;
     width: 100%;
@@ -78,10 +76,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
-
 }
 
-.specsBox li {
+.CardCar-specs {
     border: 1px solid #dcdcdc;
     border-bottom: none;
     color: #999;
@@ -91,32 +88,32 @@
     text-align: center;
 }
 
-.specsBox li span {
+.CardCar-text {
     line-height: 20px;
 }
 
-.specsBox .icon {
+.CardCar-specsBox .CardCar-icon {
     color: black;
     padding-right: 5px;
     font-size: 1.2em;
 }
 
-.card:hover {
+.CardCar-card:hover {
     background-color: #4faac5;
 }
 
-.card:hover .priceCar{
+.CardCar-card:hover .CardCar-priceCar {
     color: white
 }
 
-.card:hover .priceBox{
+.CardCar-card:hover .CardCar-priceBox {
     color: white;
 }
 
-.card:hover .icon {
+.CardCar-card:hover .CardCar-icon {
     color: white;
 }
 
-.card:hover .specsBox li {
+.CardCar-card:hover .CardCar-specs {
     color: white;
 }
