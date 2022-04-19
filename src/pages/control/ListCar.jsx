@@ -22,11 +22,13 @@ export default function ListCar() {
       <Table hover>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Modelo</th>
+            <th>Placa</th>
             <th>Marca</th>
+            <th>Modelo</th>
+            <th>Versão</th>
             <th>Ano</th>
-            <th>Preço</th>
+            <th>Valor</th>
+            <th>Km</th>
             <th>Excluir</th>
           </tr>
         </thead>
@@ -37,10 +39,12 @@ export default function ListCar() {
               key={car._id}
               onClick={() => Navigate(`/painel/editar/${car._id}`)}
             >
-              <td>{car._id}</td>
-              <td>{car.model}</td>
+              <td>{car.plate}</td>
               <td>{car.brand.name}</td>
+              <td>{car.model}</td>
+              <td>{car.version}</td>
               <td>{car.year}</td>
+              <td>{car.km}</td>
               <td>{car.price}</td>
               <td>
                 <ButtonDelete
