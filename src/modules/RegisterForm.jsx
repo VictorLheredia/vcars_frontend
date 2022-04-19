@@ -1,6 +1,7 @@
+import "../styles/RegisterForm.css";
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
-
+import { Row, Col } from "react-bootstrap";
 import Input from "../components/Input";
 import Select from "../components/Select";
 import SubmitButton from "../components/SubmitButton";
@@ -60,104 +61,110 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
   console.log(brands);
 
   return (
-    <form onSubmit={submit}>
-      <Select
-        name="brand"
-        text="Marca"
-        placeholder="Selecione a marca do veículo"
-        options={brands}
-        handleOnChange={handleSelect}
-        value={car.brand ? car.brand.id : ""}
-      ></Select>
-      <Input
-        name="model"
-        type="text"
-        text="Modelo"
-        placeholder="Insira o modelo do veículo"
-        handleOnChange={handleChange}
-        value={car.model ? car.model : ""}
-      ></Input>
-      <Input
-        name="version"
-        type="text"
-        text="Versão"
-        placeholder="Insira a versão do veículo"
-        handleOnChange={handleChange}
-        value={car.version ? car.version : ""}
-      ></Input>
-      <Input
-        name="year"
-        type="text"
-        text="Ano"
-        placeholder="Insira o ano do veículo"
-        handleOnChange={handleChange}
-        value={car.year ? car.year : ""}
-      ></Input>
-      <Input
-        name="price"
-        type="number"
-        text="Valor"
-        placeholder="Insira o valor do veículo"
-        handleOnChange={handleChange}
-        value={car.price ? car.price : ""}
-      ></Input>
-      <Input
-        name="plate"
-        type="text"
-        text="Placa"
-        placeholder="Insira a placa do veículo"
-        handleOnChange={handleChange}
-        value={car.plate ? car.plate : ""}
-      ></Input>
-      <Input
-        name="km"
-        type="number"
-        text="Quilometragem "
-        placeholder="Insira a quilometragem do veículo"
-        handleOnChange={handleChange}
-        value={car.km ? car.km : ""}
-      ></Input>
-      <Select
-        name="trasmission"
-        text="Câmbio"
-        placeholder="Selecione o câmbio do veículo"
-        options={transmisions}
-        handleOnChange={handleSelect}
-        value={car.trasmission ? car.trasmission.id : ""}
-      ></Select>
-      <Select
-        name="doors"
-        text="Portas"
-        placeholder="Selecione a quantidade de portas"
-        options={doors}
-        handleOnChange={handleSelect}
-        value={car.doors ? car.doors.id : ""}
-      ></Select>
-      <Select
-        name="fuel"
-        text="Combustível"
-        placeholder="Selecione o combustível do veiculo"
-        options={fuel}
-        handleOnChange={handleSelect}
-        value={car.fuel ? car.fuel.id : ""}
-      ></Select>
-      <Input
-        name="color"
-        type="text"
-        text="Cor"
-        placeholder="Insira a cor do veículo"
-        handleOnChange={handleChange}
-        value={car.color ? car.color : ""}
-      ></Input>
-      <Select
-        name="category"
-        text="Categoria"
-        placeholder="Selecione a categoria do veiculo"
-        options={category}
-        handleOnChange={handleSelect}
-        value={car.category ? car.category.id : ""}
-      ></Select>
-      <SubmitButton text={btnText}></SubmitButton>
+    <form onSubmit={submit} id="RegisterForm">
+      <Row>
+        <Col>
+          <Select
+            name="brand"
+            text="Marca"
+            placeholder="Selecione a marca do veículo"
+            options={brands}
+            handleOnChange={handleSelect}
+            value={car.brand ? car.brand.id : ""}
+          ></Select>
+          <Input
+            name="model"
+            type="text"
+            text="Modelo"
+            placeholder="Insira o modelo do veículo"
+            handleOnChange={handleChange}
+            value={car.model ? car.model : ""}
+          ></Input>
+          <Input
+            name="version"
+            type="text"
+            text="Versão"
+            placeholder="Insira a versão do veículo"
+            handleOnChange={handleChange}
+            value={car.version ? car.version : ""}
+          ></Input>
+          <Input
+            name="year"
+            type="text"
+            text="Ano"
+            placeholder="Insira o ano do veículo"
+            handleOnChange={handleChange}
+            value={car.year ? car.year : ""}
+          ></Input>
+          <Input
+            name="price"
+            type="number"
+            text="Valor"
+            placeholder="Insira o valor do veículo"
+            handleOnChange={handleChange}
+            value={car.price ? car.price : ""}
+          ></Input>
+          <Input
+            name="plate"
+            type="text"
+            text="Placa"
+            placeholder="Insira a placa do veículo"
+            handleOnChange={handleChange}
+            value={car.plate ? car.plate : ""}
+          ></Input>
+        </Col>
+        <Col>
+          <Input
+            name="km"
+            type="number"
+            text="Quilometragem "
+            placeholder="Insira a quilometragem do veículo"
+            handleOnChange={handleChange}
+            value={car.km ? car.km : ""}
+          ></Input>
+          <Select
+            name="trasmission"
+            text="Câmbio"
+            placeholder="Selecione o câmbio do veículo"
+            options={transmisions}
+            handleOnChange={handleSelect}
+            value={car.trasmission ? car.trasmission.id : ""}
+          ></Select>
+          <Select
+            name="doors"
+            text="Portas"
+            placeholder="Selecione a quantidade de portas"
+            options={doors}
+            handleOnChange={handleSelect}
+            value={car.doors ? car.doors.id : ""}
+          ></Select>
+          <Select
+            name="fuel"
+            text="Combustível"
+            placeholder="Selecione o combustível do veiculo"
+            options={fuel}
+            handleOnChange={handleSelect}
+            value={car.fuel ? car.fuel.id : ""}
+          ></Select>
+          <Input
+            name="color"
+            type="text"
+            text="Cor"
+            placeholder="Insira a cor do veículo"
+            handleOnChange={handleChange}
+            value={car.color ? car.color : ""}
+          ></Input>
+          <Select
+            name="category"
+            text="Categoria"
+            placeholder="Selecione a categoria do veiculo"
+            options={category}
+            handleOnChange={handleSelect}
+            value={car.category ? car.category.id : ""}
+          ></Select>
+        </Col>
+        <SubmitButton text={btnText}></SubmitButton>
+      </Row>
     </form>
   );
 }
