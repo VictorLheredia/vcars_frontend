@@ -5,7 +5,18 @@ import { SiSpeedtest } from "react-icons/si";
 import { MdLocalGasStation } from "react-icons/md";
 import { Card } from "react-bootstrap";
 
-export default function CardCar({ model, brand, year, price, image, carId }) {
+export default function CardCar({
+  carId,
+  brand,
+  model,
+  version,
+  year,
+  price,
+  km,
+  trasmission,
+  fuel,
+  image,
+}) {
   const BRL = price.toLocaleString("pt-br", { minimumFractionDigits: 2 });
 
   return (
@@ -19,7 +30,7 @@ export default function CardCar({ model, brand, year, price, image, carId }) {
               {brand} {model}
             </div>
             <div className="subtitle">
-              1.0 200 TSI TOTAL FLEX HIGHLINE AUTOMÁTICO
+              {version} {trasmission}
             </div>
             <div className="priceCar">
               <span className="cifrao">R$</span>
@@ -27,23 +38,23 @@ export default function CardCar({ model, brand, year, price, image, carId }) {
             </div>
           </div>
           <ul className="specsBox">
-            <li className="specs">
+            <li className="specs left">
               <span className="icon">
                 <BsCalendar3 />
               </span>
-              <span className="text">2021/2021</span>
+              <span className="text">{year}</span>
             </li>
-            <li className="specs">
+            <li className="specs mid">
               <span className="icon">
                 <SiSpeedtest />
               </span>
-              <span className="text">60250 km</span>
+              <span className="text">{km} km</span>
             </li>
-            <li className="specs">
+            <li className="specs right">
               <span className="icon">
                 <MdLocalGasStation />
               </span>
-              <span className="text">Flex</span>
+              <span className="text">{fuel}</span>
             </li>
           </ul>
         </Card>

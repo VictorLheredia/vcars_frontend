@@ -12,7 +12,6 @@ export default function NegotiationBox() {
             name="name"
             type="text"
             placeholder="Nome:"
-            handleOnChange=""
             value=""
           ></input>
           <input
@@ -20,7 +19,6 @@ export default function NegotiationBox() {
             name="email"
             type="email"
             placeholder="E-mail:"
-            handleOnChange=""
             value=""
           ></input>
           <input
@@ -28,7 +26,6 @@ export default function NegotiationBox() {
             name="tel"
             type="tel"
             placeholder="Tel/Cel:"
-            handleOnChange=""
             value=""
             pattern="[0-9]{2}-[0-9]{5}-[0-9]{4}"
             required
@@ -39,7 +36,6 @@ export default function NegotiationBox() {
             name="note"
             type="text"
             placeholder="Obsevações:"
-            handleOnChange=""
             value=""
           ></input>
           <div className="contact-by">Entrar em contato por:</div>

@@ -34,7 +34,7 @@ export default function CarBox() {
       <br></br>
       <BrandLink brand="fiat">fiat</BrandLink>
 
-      <Row xs={1} md={2} lg={3}>
+      <Row md={1} lg={3}>
         {cars
           .filter((car) => {
             let filter = searchParams.get("brand");
@@ -58,10 +58,14 @@ export default function CarBox() {
             <CardCar
               key={car._id}
               carId={car._id}
-              model={car.model}
               brand={car.brand.name}
+              model={car.model}
+              version={car.version}
               year={car.year}
               price={car.price}
+              km={car.km}
+              fuel={car.fuel.name}
+              trasmission={car.trasmission.name}
               image={
                 Array.isArray(car.images)
                   ? car.images.map((img) => img.url).shift()
