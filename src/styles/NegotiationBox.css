@@ -5,10 +5,15 @@
 }
 
 #NegotiationBox .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 24px;
+    
 }
 
 #NegotiationBox .negotiation {
@@ -45,7 +50,7 @@
 }
 
 #NegotiationBox .note {
-    height: 200px;
+    height: 100px;
 }
 
 #NegotiationBox .contact-by {

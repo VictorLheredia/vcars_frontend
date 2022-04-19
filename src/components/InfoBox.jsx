@@ -8,49 +8,73 @@ import { GiGearStickPattern } from "react-icons/gi";
 import { GiCarDoor } from "react-icons/gi";
 import { MdLocalGasStation } from "react-icons/md";
 import { IoMdColorPalette } from "react-icons/io";
+import { FaTruckPickup } from "react-icons/fa";
+import { BsTagFill } from "react-icons/bs";
 
-export default function InfoBox() {
+export default function InfoBox({
+  brand,
+  model,
+  version,
+  year,
+  plate,
+  km,
+  trasmission,
+  doors,
+  fuel,
+  color,
+  category,
+}) {
   return (
     <div id="InfoBox">
+      <div className="item_info gray">
+        <BsTagFill />
+        <span>Marca</span>
+        {brand}
+      </div>
       <div className="item_info">
         <FaCar />
         <span>Moldeo</span>
-        Punto
+        {model}
       </div>
       <div className="item_info gray">
         <IoMdColorPalette />
         <span>Cor</span>
-        Cinza
+        {color}
       </div>
       <div className="item_info">
         <FaDigitalTachograph />
         <span>Final Placa</span>
-        9
+        {plate}
       </div>
       <div className="item_info gray">
         <IoMdSpeedometer />
         <span>Quilometragem</span>
-        50.000
+        {km}
       </div>
       <div className="item_info ">
         <VscCalendar />
         <span>Ano</span>
-        2011/2012
+        {year}
       </div>
       <div className="item_info gray">
         <GiGearStickPattern />
         <span>Câmbio</span>
-        Manual
+       {trasmission}
       </div>
       <div className="item_info">
         <GiCarDoor />
         <span>Portas</span>
-        4
+        {doors}
       </div>
       <div className="item_info gray">
         <MdLocalGasStation />
         <span>Combustível</span>
-        Flex
+        {fuel}
+      </div>
+      <div className="item_info">
+        <FaTruckPickup />
+        <span>Carroceria</span>
+        {category}
       </div>
     </div>
   );

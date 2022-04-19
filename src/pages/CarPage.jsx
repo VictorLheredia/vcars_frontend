@@ -14,6 +14,12 @@ export default function CarPage() {
   const { carId } = useParams();
 
   const brand = (car.brand || {}).name;
+  const fuel = (car.fuel || {}).name;
+  const trasmission = (car.trasmission || {}).name;
+  const doors = (car.doors || {}).name;
+  const category = (car.category || {}).name;
+  
+  
   const images = car.images;
   const urlArray = (images || []).map((image) => image.url);
   const carouselObject = urlArray.map((url) => ({
@@ -33,14 +39,29 @@ export default function CarPage() {
       <Row>
         <Col md={9}>
           <div className="carTitle">
-            <span>{brand} Modelo</span> 1.0 TI-VCT FLEX SE SEDAN MANUAL
+            <span>
+              {brand} {car.model}
+            </span>{" "}
+            {car.version} {fuel} {trasmission}
           </div>
           <Row>
             <Col md={8}>
               <Carousel urlArray={carouselObject} />
             </Col>
             <Col md={4}>
-              <InfoBox />
+              <InfoBox
+              brand={brand}
+              model={car.model}
+              version={car.version}
+              year={car.year}
+              plate={car.plate}
+              km={car.km}
+              trasmission={trasmission}
+              doors={doors}
+              fuel={fuel}
+              color={car.color}
+              category={category}
+               />
             </Col>
           </Row>
         </Col>
