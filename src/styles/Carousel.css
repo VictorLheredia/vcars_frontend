@@ -1,0 +1,14 @@
+.image-gallery-left-nav .image-gallery-svg,
+.image-gallery-right-nav .image-gallery-svg {
+    height: 50px;
+    width: 30px
+}
+
+#Carousel .image-gallery-thumbnails {
+    overflow: hidden;
+    padding-bottom: 0
+}
+
+#Carousel .image-gallery-thumbnail img {
+    height: 70px;
+}
