@@ -1,0 +1,75 @@
+#HeaderTop {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    background-color: #1C719B;
+}
+
+#HeaderTop .container-top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#HeaderTop .telephone {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-color: #4FAAC5;
+    padding: 5px;
+    border-radius: 6px;
+}
+
+#HeaderTop .telephone:hover {
+    background-color: #59c9eb;
+}
+
+#HeaderTop .whatsapp {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    background-color: #25D366;
+    padding: 5px;
+    border-radius: 6px;
+    margin-left: 20px;
+}
+
+#HeaderTop .whatsapp:hover {
+    background-color: #3de47a;
+}
+
+
+
+#HeaderTop .link {
+    text-decoration: none;
+}
+
+#HeaderTop .button {
+    display: flex;
+    align-items: center;
+}
+
+#HeaderTop .icon-button {
+    color: #ffff;
+}
+
+#HeaderTop .text {
+    color: #fff;
+    font-size: 14px;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+#HeaderTop .icons {
+    color: #ffff;
+    padding-left: 20px;
+}
+
+#HeaderTop .icons:hover {
+    color: #4FAAC5;
+    cursor: pointer;
+}
+
+#HeaderTop svg {
+    font-size: 22px;
+}
