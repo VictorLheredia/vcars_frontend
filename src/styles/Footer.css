@@ -1,0 +1,29 @@
+#Footer {
+    height: 250px;
+    background-color: #1C719B;
+}
+
+#Footer .logo {
+    height: 180px;
+    padding: 20px;
+}
+
+.pix {
+    border-radius: 8px;
+}
+
+#Footer .copyright {
+    border-top: solid 1px #ffff;
+    padding-top: 10px;
+    color: #ffff;
+    font-size: 16px;
+}
+
+.copy,
+.developed {
+    text-align: center;
+}
+
+#Footer .copyright span {
+    font-weight: bold;
+}

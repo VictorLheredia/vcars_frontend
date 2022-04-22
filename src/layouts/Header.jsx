@@ -13,7 +13,7 @@ export default function Header() {
       <Navbar expand="xl">
         <Container id="md">
           <Navbar.Brand>
-            <img src={Logo} alt="logo" height={90} />
+            <img src={Logo} alt="logo" height={92} />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <div className="header-nav">
