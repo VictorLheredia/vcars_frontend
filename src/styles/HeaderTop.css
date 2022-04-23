@@ -3,6 +3,7 @@
     align-items: center;
     height: 46px;
     background-color: #1C719B;
+    box-shadow: 0px 0px 2px #000;
 }
 
 #HeaderTop .container-top {
