@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import { api } from "../services/api";
 import CardCar from "../components/CardCar";
@@ -35,8 +34,8 @@ export default function CarBox() {
           .filter((car) => {
             let filter = searchParams.get("price");
             if (!filter) return true;
-            let price = String(car.price);
-            return price.startsWith(filter.toLowerCase());
+            let price = car.price;
+            return price >= filter;
           })
           .map((car) => (
             <CardCar

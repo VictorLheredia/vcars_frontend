@@ -1,22 +1,33 @@
 import { useSearchParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { api } from "../services/api";
+import SelectSearchBar from "../components/SelectSearchBar";
 
 export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
+  const [brands, setBrands] = useState([]);
 
-  function handleSearchModel(e) {
-    let model = e.target.value;
-    if (model) {
-      searchParams.set("model", `${model}`);
+  useEffect(() => {
+    api
+      .get(`/brands`)
+      .then((res) => setBrands(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  function handleSearchBrand(e) {
+    let brand = e.target.value;
+    if (brand) {
+      searchParams.set("brand", `${brand}`);
       setSearchParams(searchParams);
     } else {
       setSearchParams({});
     }
   }
 
-  function handleSearchBrand(e) {
-    let brand = e.target.value;
-    if (brand) {
-      searchParams.set("brand", `${brand}`);
+  function handleSearchModel(e) {
+    let model = e.target.value;
+    if (model) {
+      searchParams.set("model", `${model}`);
       setSearchParams(searchParams);
     } else {
       setSearchParams({});
@@ -36,10 +47,13 @@ export default function SearchBar() {
     <div>
       <div>
         <div>
-          <input
-            placeholder="Marca"
+          <SelectSearchBar
+            name="brand"
+            text="Marca"
+            placeholder="Selecione a marca do veículo"
+            options={brands}
+            handleOnChange={handleSearchBrand}
             value={searchParams.get("brand") || ""}
-            onChange={handleSearchBrand}
           />
         </div>
         <input
@@ -47,16 +61,17 @@ export default function SearchBar() {
           value={searchParams.get("model") || ""}
           onChange={handleSearchModel}
         />
+        <div>
+          <input
+            type="range"
+            min="10000"
+            max="100000"
+            step="1000"
+            onInput={handleSearchPrice}
+          />
+          <p>Valor: {searchParams.get("price")}</p>
+        </div>
       </div>
-      <div>
-        <input
-          placeholder="preço"
-          type="number"
-          value={searchParams.get("price") || ""}
-          onChange={handleSearchPrice}
-        />
-      </div>
-      <input type="range" min="10000" max="100000" step="1000" />
     </div>
   );
 }
