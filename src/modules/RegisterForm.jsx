@@ -90,7 +90,7 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
           ></Input>
           <Input
             name="year"
-            type="text"
+            type="number"
             text="Ano"
             placeholder="Insira o ano do veículo"
             handleOnChange={handleChange}

@@ -2,11 +2,29 @@ import "../styles/Header.css";
 import Logo from "../img/Logo.svg";
 import { Container, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
+import { useSearchParams } from "react-router-dom";
 import { BiSearchAlt2 } from "react-icons/bi";
 import HeaderTop from "./HeaderTop";
 
 export default function Header() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const navigate = useNavigate();
+
+  function navigateStock() {
+    navigate(`/estoque`);
+  }
+
+  function handleSearchText(e) {
+    let text = e.target.value;
+    if (text) {
+      searchParams.set("text", `${text}`);
+      setSearchParams(searchParams);
+    } else {
+      setSearchParams({});
+    }
+  }
+
   return (
     <div id="Header">
       <HeaderTop />
@@ -45,7 +63,15 @@ export default function Header() {
             <div className="container-input">
               <div className="wrap-input">
                 <div className="input">
-                  <input type="text" placeholder="Encontre seu veículo" />
+                  <input
+                    name="text"
+                    type="text"
+                    id="text"
+                    placeholder="Encontre seu veículo"
+                    onChange={handleSearchText}
+                    onSelect={navigateStock}
+                    value={searchParams.get("text") || ""}
+                  />
                   <div className="icon">
                     <BiSearchAlt2 />
                   </div>

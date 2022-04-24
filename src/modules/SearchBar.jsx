@@ -2,10 +2,31 @@ import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 import SelectSearchBar from "../components/SelectSearchBar";
+import InputRange from "react-input-range";
+import "react-input-range/lib/css/index.css";
 
 export default function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [brands, setBrands] = useState([]);
+  const [cars, setCars] = useState([]);
+
+  const [year, setYear] = useState({ min: 1990, max: 2023 });
+  const [price, setPrice] = useState({ min: 10000, max: 100000 });
+  const [km, setKm] = useState({ min: 0, max: 100000 });
+
+  const category = [
+    { _id: "1", name: "Hatchback" },
+    { _id: "2", name: "Sedan" },
+    { _id: "3", name: "Suv" },
+    { _id: "4", name: "Pick-up" },
+    { _id: "5", name: "Minivan" },
+    { _id: "6", name: "Esportivo" },
+  ];
+
+  const transmisions = [
+    { _id: "1", name: "Manual" },
+    { _id: "2", name: "Automático" },
+  ];
 
   useEffect(() => {
     api
@@ -14,64 +35,167 @@ export default function SearchBar() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    api
+      .get(`/cars`)
+      .then((res) => setCars(res.data))
+      .catch((err) => console.log(err));
+  }, []);
+
+  const filterBrand = cars.filter((car) => {
+    let filter = searchParams.get("brand");
+    if (!filter) return true;
+    let brand = car.brand.name.toLowerCase();
+    return brand.startsWith(filter.toLowerCase());
+  });
+
+  const models = filterBrand.map((car) => car.model);
+
   function handleSearchBrand(e) {
-    let brand = e.target.value;
-    if (brand) {
-      searchParams.set("brand", `${brand}`);
-      setSearchParams(searchParams);
-    } else {
-      setSearchParams({});
-    }
+    searchParams.set("brand", `${e.target.value}`);
+    setSearchParams(searchParams);
   }
 
   function handleSearchModel(e) {
-    let model = e.target.value;
-    if (model) {
-      searchParams.set("model", `${model}`);
-      setSearchParams(searchParams);
-    } else {
-      setSearchParams({});
-    }
+    searchParams.set("model", `${e.target.value}`);
+    setSearchParams(searchParams);
   }
 
-  function handleSearchPrice(e) {
-    let price = e.target.value;
-    if (price) {
-      searchParams.set("price", `${price}`);
-      setSearchParams(searchParams);
-    } else {
-      setSearchParams({});
-    }
+  function handleSearchCategory(e) {
+    searchParams.set("category", `${e.target.value}`);
+    setSearchParams(searchParams);
   }
+
+  function handleSearchYear(args) {
+    searchParams.set("year_min", `${args.min}`);
+    searchParams.set("year_max", `${args.max}`);
+    setSearchParams(searchParams);
+  }
+
+  function handleSearchPrice(args) {
+    searchParams.set("price_min", `${args.min}`);
+    searchParams.set("price_max", `${args.max}`);
+    setSearchParams(searchParams);
+  }
+
+  function handleSearchKm(args) {
+    searchParams.set("km_min", `${args.min}`);
+    searchParams.set("km_max", `${args.max}`);
+    setSearchParams(searchParams);
+  }
+
+  function handleSearchTransmisions(e) {
+    searchParams.set("trasmission", `${e.target.value}`);
+    setSearchParams(searchParams);
+  }
+
+  function resetInput() {
+    setSearchParams({});
+    setYear({ min: 1990, max: 2023 });
+    setPrice({ min: 10000, max: 100000 });
+    setKm({ min: 0, max: 100000 });
+  }
+
   return (
     <div>
-      <div>
-        <div>
+      <form>
+        <input type="reset" onClick={resetInput} value="Limpar filtros" />
+        <div id="search-brand">
           <SelectSearchBar
             name="brand"
             text="Marca"
-            placeholder="Selecione a marca do veículo"
-            options={brands}
+            placeholder="Selecione uma marca"
+            options={brands.sort(function (a, b) {
+              return a.name > b.name ? 1 : b.name > a.name ? -1 : 0;
+            })}
             handleOnChange={handleSearchBrand}
             value={searchParams.get("brand") || ""}
           />
         </div>
-        <input
-          placeholder="Modelo"
-          value={searchParams.get("model") || ""}
-          onChange={handleSearchModel}
-        />
-        <div>
-          <input
-            type="range"
-            min="10000"
-            max="100000"
-            step="1000"
-            onInput={handleSearchPrice}
-          />
-          <p>Valor: {searchParams.get("price")}</p>
+        <div id="search-model">
+          <select
+            name="model"
+            id="model"
+            onChange={handleSearchModel}
+            value={searchParams.get("model") || ""}
+          >
+            <option value="">Selecione um modelo</option>
+            {models.sort().map((model) => (
+              <option value={model} key={model}>
+                {model}
+              </option>
+            ))}
+          </select>
         </div>
-      </div>
+        <div id="search-year">
+          <div>
+            Ano de {year.min} até {year.max}
+          </div>
+          <InputRange
+            step={1}
+            formatLabel={(value) => null}
+            draggableTrack={false}
+            allowSameValues={false}
+            maxValue={2023}
+            minValue={1990}
+            value={year}
+            onChange={setYear}
+            onChangeComplete={(args) => handleSearchYear(args)}
+          />
+        </div>
+        <div id="search-price">
+          <div>
+            Valor de R$ {price.min} até R$ {price.max}
+          </div>
+          <InputRange
+            step={5000}
+            formatLabel={(value) => null}
+            draggableTrack={false}
+            allowSameValues={false}
+            maxValue={100000}
+            minValue={10000}
+            value={price}
+            onChange={setPrice}
+            onChangeComplete={(args) => handleSearchPrice(args)}
+          />
+        </div>
+        <div id="search-km">
+          <div>
+            Km de {km.min} até {km.max}
+          </div>
+          <InputRange
+            step={10000}
+            formatLabel={(value) => null}
+            draggableTrack={false}
+            allowSameValues={false}
+            maxValue={100000}
+            minValue={0}
+            value={km}
+            onChange={setKm}
+            onChangeComplete={(args) => handleSearchKm(args)}
+          />
+        </div>
+        <div id="search-category">
+          <SelectSearchBar
+            name="category"
+            text="Categoria"
+            placeholder="Selecione uma categoria"
+            options={category}
+            handleOnChange={handleSearchCategory}
+            value={searchParams.get("category") || ""}
+          />
+        </div>
+        <div id="search-trasmission">
+          <SelectSearchBar
+            name="trasmission"
+            text="Câmbio"
+            placeholder="Selecione um câmbio"
+            options={transmisions}
+            handleOnChange={handleSearchTransmisions}
+            value={searchParams.get("trasmission") || ""}
+          />
+        </div>
+      </form>
     </div>
   );
 }

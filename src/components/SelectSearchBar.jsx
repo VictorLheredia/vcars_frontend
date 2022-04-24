@@ -19,7 +19,9 @@ export default function SelectSearchBar({
         onChange={handleOnChange}
         value={value || ""}
       >
-        <option>{placeholder}</option>
+        <option value="" defaultValue="">
+          {placeholder}
+        </option>
         {options.map((option) => (
           <option value={option.name} key={option._id}>
             {option.name}

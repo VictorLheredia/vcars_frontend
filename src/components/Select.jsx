@@ -19,7 +19,9 @@ export default function Select({
         onChange={handleOnChange}
         value={value || ""}
       >
-        <option>{placeholder}</option>
+        <option value="" defaultValue="">
+          {placeholder}
+        </option>
         {options.map((option) => (
           <option value={option._id} key={option._id}>
             {option.name}
