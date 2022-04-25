@@ -13,7 +13,7 @@ export default function SearchBar() {
   const [cars, setCars] = useState([]);
 
   const [year, setYear] = useState({ min: 1990, max: 2023 });
-  const [price, setPrice] = useState({ min: 10000, max: 100000 });
+  const [price, setPrice] = useState({ min: 10000, max: 150000 });
   const [km, setKm] = useState({ min: 0, max: 100000 });
 
   const category = [
@@ -63,11 +63,6 @@ export default function SearchBar() {
     setSearchParams(searchParams);
   }
 
-  function handleSearchCategory(e) {
-    searchParams.set("category", `${e.target.value}`);
-    setSearchParams(searchParams);
-  }
-
   function handleSearchYear(args) {
     searchParams.set("year_min", `${args.min}`);
     searchParams.set("year_max", `${args.max}`);
@@ -86,6 +81,11 @@ export default function SearchBar() {
     setSearchParams(searchParams);
   }
 
+  function handleSearchCategory(e) {
+    searchParams.set("category", `${e.target.value}`);
+    setSearchParams(searchParams);
+  }
+
   function handleSearchTransmisions(e) {
     searchParams.set("trasmission", `${e.target.value}`);
     setSearchParams(searchParams);
@@ -94,7 +94,7 @@ export default function SearchBar() {
   function resetInput() {
     setSearchParams({});
     setYear({ min: 1990, max: 2023 });
-    setPrice({ min: 10000, max: 100000 });
+    setPrice({ min: 10000, max: 150000 });
     setKm({ min: 0, max: 100000 });
   }
 
@@ -132,6 +132,29 @@ export default function SearchBar() {
             value={searchParams.get("model") || ""}
           />
         </div>
+        <div id="search-price" className="range">
+          <div className="range-text">
+            Valor de <small>R$</small>{" "}
+            {price.min.toLocaleString("pt-br", {
+              minimumFractionDigits: 0,
+            })}{" "}
+            até <small>R$</small>{" "}
+            {price.max.toLocaleString("pt-br", {
+              minimumFractionDigits: 0,
+            })}
+          </div>
+          <InputRange
+            step={5000}
+            formatLabel={(value) => null}
+            draggableTrack={false}
+            allowSameValues={false}
+            maxValue={150000}
+            minValue={10000}
+            value={price}
+            onChange={setPrice}
+            onChangeComplete={(args) => handleSearchPrice(args)}
+          />
+        </div>
         <div id="search-year" className="range">
           <div className="range-text">
             Ano de {year.min} até {year.max}
@@ -148,25 +171,16 @@ export default function SearchBar() {
             onChangeComplete={(args) => handleSearchYear(args)}
           />
         </div>
-        <div id="search-price" className="range">
-          <div className="range-text">
-            Valor de R$ {price.min} até R$ {price.max}
-          </div>
-          <InputRange
-            step={5000}
-            formatLabel={(value) => null}
-            draggableTrack={false}
-            allowSameValues={false}
-            maxValue={100000}
-            minValue={10000}
-            value={price}
-            onChange={setPrice}
-            onChangeComplete={(args) => handleSearchPrice(args)}
-          />
-        </div>
         <div id="search-km" className="range">
           <div className="range-text">
-            Km de {km.min} até {km.max}
+            De{" "}
+            {km.min.toLocaleString("pt-br", {
+              minimumFractionDigits: 0,
+            })}{" "}Km
+            até{" "}
+            {km.max.toLocaleString("pt-br", {
+              minimumFractionDigits: 0,
+            })}{" "}Km
           </div>
           <InputRange
             step={10000}

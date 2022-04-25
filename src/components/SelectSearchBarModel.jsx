@@ -1,4 +1,4 @@
-import "../styles/SelectSearchBar.css"
+import "../styles/SelectSearchBar.css";
 
 export default function SelectSearchBarModel({
   text,
@@ -24,7 +24,7 @@ export default function SelectSearchBarModel({
         </option>
         {options.map((option) => (
           <option value={option} key={option}>
-            {option}
+            {option.toUpperCase()}
           </option>
         ))}
       </select>
