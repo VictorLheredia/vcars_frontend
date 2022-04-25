@@ -1,6 +1,6 @@
 import "../styles/SelectSearchBar.css"
 
-export default function SelectSearchBar({
+export default function SelectSearchBarModel({
   text,
   name,
   options,
@@ -23,8 +23,8 @@ export default function SelectSearchBar({
           {placeholder}
         </option>
         {options.map((option) => (
-          <option value={option.name} key={option._id}>
-            {option.name}
+          <option value={option} key={option}>
+            {option}
           </option>
         ))}
       </select>

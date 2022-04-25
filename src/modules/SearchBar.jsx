@@ -1,7 +1,9 @@
+import "../styles/SearchBar.css";
 import { useSearchParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { api } from "../services/api";
 import SelectSearchBar from "../components/SelectSearchBar";
+import SelectSearchBarModel from "../components/SelectSearchBarModel";
 import InputRange from "react-input-range";
 import "react-input-range/lib/css/index.css";
 
@@ -97,9 +99,17 @@ export default function SearchBar() {
   }
 
   return (
-    <div>
-      <form>
-        <input type="reset" onClick={resetInput} value="Limpar filtros" />
+    <div id="SearchBar">
+      <div className="search-top">Buscar</div>
+      <form className="search-body">
+        <div className="d-flex justify-content-center">
+          <input
+            type="reset"
+            onClick={resetInput}
+            value="Limpar filtros"
+            className="reset"
+          />
+        </div>
         <div id="search-brand">
           <SelectSearchBar
             name="brand"
@@ -113,22 +123,17 @@ export default function SearchBar() {
           />
         </div>
         <div id="search-model">
-          <select
+          <SelectSearchBarModel
             name="model"
-            id="model"
-            onChange={handleSearchModel}
+            text="Modelo"
+            placeholder="Selecione um modelo"
+            options={models.sort()}
+            handleOnChange={handleSearchModel}
             value={searchParams.get("model") || ""}
-          >
-            <option value="">Selecione um modelo</option>
-            {models.sort().map((model) => (
-              <option value={model} key={model}>
-                {model}
-              </option>
-            ))}
-          </select>
+          />
         </div>
-        <div id="search-year">
-          <div>
+        <div id="search-year" className="range">
+          <div className="range-text">
             Ano de {year.min} até {year.max}
           </div>
           <InputRange
@@ -143,8 +148,8 @@ export default function SearchBar() {
             onChangeComplete={(args) => handleSearchYear(args)}
           />
         </div>
-        <div id="search-price">
-          <div>
+        <div id="search-price" className="range">
+          <div className="range-text">
             Valor de R$ {price.min} até R$ {price.max}
           </div>
           <InputRange
@@ -159,8 +164,8 @@ export default function SearchBar() {
             onChangeComplete={(args) => handleSearchPrice(args)}
           />
         </div>
-        <div id="search-km">
-          <div>
+        <div id="search-km" className="range">
+          <div className="range-text">
             Km de {km.min} até {km.max}
           </div>
           <InputRange

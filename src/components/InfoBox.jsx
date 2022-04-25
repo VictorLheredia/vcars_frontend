@@ -73,7 +73,7 @@ export default function InfoBox({
       </div>
       <div className="item_info">
         <FaTruckPickup />
-        <span>Carroceria</span>
+        <span>Categoria</span>
         {category}
       </div>
     </div>

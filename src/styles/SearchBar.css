@@ -1,0 +1,61 @@
+#SearchBar .search-top {
+    background-color: #005284;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.6em;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+#SearchBar .search-body {
+    background-color: #F7F7F7;
+    padding: 12px;
+}
+
+#SearchBar .reset {
+    color: #fff;
+    background-color: #4FAAC5;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 4px 10px;
+    box-shadow: 0px 0px 3px #4FAAC5;
+}
+
+#SearchBar .reset:hover {
+    background-color: #59c9eb;
+}
+
+#SearchBar .range {
+    padding: 14px 0;
+}
+
+#SearchBar .range-text {
+    color: #212529;
+    font-weight: bold;
+}
+
+
+#SearchBar .input-range__track {
+    height: 0.9rem;
+    background-color: #fff;
+    border-radius: 0.1rem;
+    border: 1px solid #4FAAC5;
+
+}
+
+#SearchBar .input-range__track--active {
+    background-color: #4FAAC5;
+}
+
+#SearchBar .input-range__slider {
+    background-color: #fff;
+    border: 1px solid #a3a3a3;
+    border-radius: 15%;
+    box-shadow: 0px 0px 3px #4FAAC5;
+    height: 1.4rem;
+    margin-top: -19px;
+
+}

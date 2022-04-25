@@ -69,7 +69,7 @@ export default function Header() {
                     id="text"
                     placeholder="Encontre seu veículo"
                     onChange={handleSearchText}
-                    onSelect={navigateStock}
+                    onFocus={navigateStock}
                     value={searchParams.get("text") || ""}
                   />
                   <div className="icon">
