@@ -1,0 +1,41 @@
+#ExtrasBox {
+    margin-top: 20px;
+    border: solid 1px #5f5f5f;
+}
+
+#ExtrasBox .top {
+    background-color: #5f5f5f;
+    color: #ffff;
+    text-transform: uppercase;
+    padding: 8px 20px;
+}
+
+#ExtrasBox .extras-title {
+    font-size: 18px;
+    padding: 10px 0;
+    color: #5f5f5f;
+}
+
+#ExtrasBox .extras-body {
+    padding: 10px 20px;
+    color: #5f5f5f;
+}
+
+#ExtrasBox .extras-tem {
+    display: flex;
+    padding-bottom: 8px;
+    text-transform: capitalize;
+    font-size: 15px;
+}
+
+#ExtrasBox .extras-icon {
+    display: flex;
+    align-items: center;
+    padding-right: 6px;
+}
+
+#ExtrasBox .detail-title {
+    font-size: 18px;
+    padding: 30px 0 10px;
+    color: #5f5f5f;
+}

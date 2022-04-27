@@ -7,8 +7,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { Container } from "react-bootstrap";
 import Carousel from "../components/Carousel";
+
 import InfoBox from "../components/InfoBox";
 import NegotiationBox from "../components/NegotiationBox";
+import ExtrasBox from "../components/ExtrasBox";
 
 export default function CarPage() {
   const [car, setCar] = useState([]);
@@ -40,10 +42,9 @@ export default function CarPage() {
         <Row>
           <Col md={9}>
             <div className="carTitle">
-              <span>
-                {brand} {car.model}
-              </span>{" "}
-              {car.version} {fuel} {trasmission}
+              <div className="brand">{brand}</div>
+              <div className="model">{car.model}</div>
+              <div className="infos">{car.version} {fuel} {trasmission}</div>
             </div>
             <Row>
               <Col md={8}>
@@ -68,6 +69,11 @@ export default function CarPage() {
           </Col>
           <Col md={3}>
             <NegotiationBox price={car.price} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <ExtrasBox extras={car.extras}></ExtrasBox>
           </Col>
         </Row>
       </div>
