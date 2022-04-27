@@ -24,7 +24,7 @@ export default function InfoBox({
   color,
   category,
 }) {
-  const LastPlate = plate.slice(-1);
+  const LastPlate = plate?.slice(-1);
 
   return (
     <div id="InfoBox">
