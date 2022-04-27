@@ -9,6 +9,8 @@ import SubmitButton from "../components/SubmitButton";
 export default function RegisterForm({ handleSubmit, btnText, carData }) {
   const [brands, setBrands] = useState([]);
   const [car, setCar] = useState(carData || {});
+  const [extra, setExtra] = useState();
+  const [extras, setExtras] = useState([]);
   const transmisions = [
     { _id: "1", name: "Manual" },
     { _id: "2", name: "Automático" },
@@ -58,7 +60,35 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
     });
   }
 
-  console.log(brands);
+  function handleExtra(e) {
+    setExtra(e.target.value);
+  }
+
+  function addExtra(e) {
+    e.preventDefault();
+    setExtras((prevArray) => [...prevArray, `${extra}`]);
+    setExtra("");
+  }
+
+  function addExtraInCar() {
+    setCar({
+      ...car,
+      extras: extras,
+    });
+  }
+
+  useEffect(() => {
+    addExtraInCar();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [extras]);
+
+  function deleteExtra(e) {
+    e.preventDefault();
+    const extra = e.target.value;
+    setExtras(extras.filter((item) => item !== extra));
+  }
+
+  console.log(car);
 
   return (
     <form onSubmit={submit} id="RegisterForm">
@@ -163,6 +193,35 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
             value={car.category ? car.category.id : ""}
           ></Select>
         </Col>
+        <Row>
+          <Col md={6}>
+            <Input
+              name="extra"
+              type="text"
+              text="Opcionais"
+              placeholder="Insira um opcional"
+              handleOnChange={handleExtra}
+              value={extra ? extra : ""}
+            ></Input>
+            <button name="extras" onClick={addExtra} value={extra ? extra : ""}>
+              +
+            </button>
+          </Col>
+          <Col md={6}>
+            <div className="d-flex">
+              {Array.isArray(car.extras)
+                ? car.extras.map((extra, index) => (
+                    <div className="d-flex p-2" key={index}>
+                      {extra}
+                      <button onClick={deleteExtra} value={extra}>
+                        x
+                      </button>
+                    </div>
+                  ))
+                : []}
+            </div>
+          </Col>
+        </Row>
         <SubmitButton text={btnText}></SubmitButton>
       </Row>
     </form>

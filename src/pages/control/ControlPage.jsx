@@ -1,16 +1,19 @@
 import "../../styles/ControlPage.css";
 import { Outlet } from "react-router-dom";
 import ControlNav from "../../components/ControlNav";
+import { Container } from "react-bootstrap";
 
 export default function ControlPage() {
   return (
-    <div id="ControlPage">
-      <div className="controlNav">
-        <ControlNav></ControlNav>
+    <Container id="md">
+      <div id="ControlPage">
+        <div className="controlNav">
+          <ControlNav></ControlNav>
+        </div>
+        <div className="outlet">
+          <Outlet></Outlet>
+        </div>
       </div>
-      <div className="outlet">
-        <Outlet></Outlet>
-      </div>
-    </div>
+    </Container>
   );
 }
