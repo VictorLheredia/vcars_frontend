@@ -51,7 +51,8 @@ export default function SearchBar() {
     return brand.startsWith(filter.toLowerCase());
   });
 
-  const models = filterBrand.map((car) => car.model);
+  const allModels = filterBrand.map((car) => car.model);
+  const models = allModels.filter((este, i) => allModels.indexOf(este) === i);
 
   function handleSearchBrand(e) {
     searchParams.set("brand", `${e.target.value}`);
@@ -176,11 +177,12 @@ export default function SearchBar() {
             De{" "}
             {km.min.toLocaleString("pt-br", {
               minimumFractionDigits: 0,
-            })}{" "}Km
-            até{" "}
+            })}{" "}
+            Km até{" "}
             {km.max.toLocaleString("pt-br", {
               minimumFractionDigits: 0,
-            })}{" "}Km
+            })}{" "}
+            Km
           </div>
           <InputRange
             step={10000}

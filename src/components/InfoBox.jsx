@@ -24,6 +24,8 @@ export default function InfoBox({
   color,
   category,
 }) {
+  const LastPlate = plate.slice(-1);
+
   return (
     <div id="InfoBox">
       <div className="item_info gray">
@@ -44,7 +46,7 @@ export default function InfoBox({
       <div className="item_info">
         <FaDigitalTachograph />
         <span>Final Placa</span>
-        {plate}
+        {LastPlate}
       </div>
       <div className="item_info gray">
         <IoMdSpeedometer />
@@ -59,7 +61,7 @@ export default function InfoBox({
       <div className="item_info gray">
         <GiGearStickPattern />
         <span>Câmbio</span>
-       {trasmission}
+        {trasmission}
       </div>
       <div className="item_info">
         <GiCarDoor />
