@@ -1,7 +1,14 @@
+import { Container, Row, Col } from "react-bootstrap";
+import CarBox from "../modules/CarBox";
+import Banner from "../components/Banner";
+
 export default function HomePage() {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
+    <>
+      <Banner></Banner>
+      <Container id="md">
+        <CarBox cardLine={4}></CarBox>
+      </Container>
+    </>
   );
 }

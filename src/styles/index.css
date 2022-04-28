@@ -42,3 +42,7 @@ body {
 #md {
   max-width: 1170px;
 }
+
+#xl {
+  max-width: 1920px;
+}

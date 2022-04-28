@@ -4,7 +4,7 @@ import { Row } from "react-bootstrap";
 import { api } from "../services/api";
 import CardCar from "../components/CardCar";
 
-export default function CarBox() {
+export default function CarBox({ cardLine }) {
   const [cars, setCars] = useState([]);
   const [searchParams] = useSearchParams();
 
@@ -17,7 +17,7 @@ export default function CarBox() {
 
   return (
     <div>
-      <Row md={1} lg={3}>
+      <Row md={1} lg={cardLine}>
         {cars
           .filter((car) => {
             let filter = searchParams.get("text");

@@ -13,7 +13,7 @@ export default function StockPage() {
             <SearchBar></SearchBar>
           </Col>
           <Col md={9}>
-            <CarBox></CarBox>
+            <CarBox cardLine={3}></CarBox>
           </Col>
         </Row>
       </Container>

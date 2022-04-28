@@ -1,0 +1,12 @@
+#Banner {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+#Banner .banner-container {
+    padding: 0;
+}
+
+#Banner img {
+    width: 100%;
+}
