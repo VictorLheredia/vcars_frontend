@@ -1,4 +1,4 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import CarBox from "../modules/CarBox";
 import Banner from "../components/Banner";
 
