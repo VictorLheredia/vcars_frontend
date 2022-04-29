@@ -12,6 +12,8 @@ import ControlPage from "./pages/control/ControlPage";
 import ListCar from "./pages/control/ListCar";
 import EditCar from "./pages/control/EditCar";
 import RegisterCar from "./pages/control/RegisterCar";
+import RegisterBrand from "./pages/control/RegisterBrand";
+import RegisterUser from "./pages/control/RegisterUser";
 
 export default function AppRoutes() {
   return (
@@ -25,8 +27,11 @@ export default function AppRoutes() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/painel" element={<Private><ControlPage /></Private>}>
               <Route index element={<ListCar />} />
+              <Route path="lista" element={<ListCar />} />
               <Route path="editar/:carId" element={<EditCar />} />
-              <Route path="cadastro" element={<RegisterCar />} />
+              <Route path="cadastro_veiculo" element={<RegisterCar />} />
+              <Route path="cadastro_marca" element={<RegisterBrand />} />
+              <Route path="cadastro_usuario" element={<RegisterUser />} />
             </Route>
           </Route>
         </Routes>

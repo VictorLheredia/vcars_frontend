@@ -1,3 +1,10 @@
 #ListCar .trBody {
-    cursor: pointer
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #4b4b4b
+}
+
+#ListCar .trBody:hover {
+    background-color: #4FAAC5;
+    color: #ffff;
 }

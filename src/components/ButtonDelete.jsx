@@ -5,10 +5,13 @@ export default function ButtonDelete({ carId, text, keyArray }) {
   const navigate = useNavigate();
   const keys = keyArray;
 
-  function deleteCar() {
+  function deleteCar(e) {
+    e.preventDefault();
+
     keys.map((key) => api.delete(`/images/${carId}/${key}`));
 
     api.delete(`/cars/${carId}`).then(navigate(`/painel`));
+
   }
 
   return <button onClick={deleteCar}>{text}</button>;

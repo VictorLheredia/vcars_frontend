@@ -55,7 +55,7 @@ export default function Header() {
                 <Link className="nav-link" to="/">
                   Contato
                 </Link>
-                <Link className="nav-link" to="/painel">
+                <Link className="nav-link" to="/painel/lista">
                   Área do lojista
                 </Link>
               </div>

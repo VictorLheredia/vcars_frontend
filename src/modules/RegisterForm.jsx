@@ -88,8 +88,6 @@ export default function RegisterForm({ handleSubmit, btnText, carData }) {
     setExtras(extras.filter((item) => item !== extra));
   }
 
-  console.log(car);
-
   return (
     <form onSubmit={submit} id="RegisterForm">
       <Row>

@@ -1,7 +1,6 @@
 #ControlPage {
     display: flex;
-    padding-top: 50px;
-    min-height: calc(100vh - 100px)
+    min-height: calc(100vh - 414px);
 }
 
 #ControlPage .outlet {

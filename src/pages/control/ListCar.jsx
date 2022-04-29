@@ -19,7 +19,7 @@ export default function ListCar() {
 
   return (
     <div id="ListCar">
-      <Table hover>
+      <Table>
         <thead>
           <tr>
             <th>Placa</th>
@@ -27,25 +27,40 @@ export default function ListCar() {
             <th>Modelo</th>
             <th>Versão</th>
             <th>Ano</th>
-            <th>Valor</th>
             <th>Km</th>
+            <th>Valor</th>
             <th>Excluir</th>
           </tr>
         </thead>
         <tbody>
           {cars.map((car) => (
-            <tr
-              className="trBody"
-              key={car._id}
-              onClick={() => Navigate(`/painel/editar/${car._id}`)}
-            >
-              <td>{car.plate}</td>
-              <td>{car.brand.name}</td>
-              <td>{car.model}</td>
-              <td>{car.version}</td>
-              <td>{car.year}</td>
-              <td>{car.km}</td>
-              <td>{car.price}</td>
+            <tr className="trBody" key={car._id}>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.plate}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.brand.name}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.model}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.version}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.year}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.km?.toLocaleString("pt-br", {
+                  minimumFractionDigits: 0,
+                })}
+              </td>
+              <td onClick={() => Navigate(`/painel/editar/${car._id}`)}>
+                {car.price?.toLocaleString("pt-BR", {
+                  style: "currency",
+                  currency: "BRL",
+                })}
+              </td>
               <td>
                 <ButtonDelete
                   carId={car._id}
