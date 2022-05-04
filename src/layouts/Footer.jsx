@@ -89,7 +89,7 @@ export default function Footer() {
         <div className="copyright">
           <div className="copy">Copyright © 2022 Vcars Seminovos</div>
           <div className="developed">
-            Developed by <span>Victor Luiz Heredia</span>
+            Developed by <span>Victor Luiz</span>
           </div>
         </div>
       </Container>
